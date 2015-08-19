@@ -1,0 +1,6 @@
+<div ng-repeat="msg in messageList" class="alert alert-{{msg.type}}">
+  {{ msg.message }}
+  <div class="close" ng-click="removeMessage(msg)">
+    <span class="glyphicon glyphicon-remove"></span>
+  </div>
+</div>

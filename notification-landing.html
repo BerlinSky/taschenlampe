@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Notification at Work</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+</head>
+<body>
+
+<div class="container">
+
+  <div class="panel panel-body">
+    <notification></notification>
+  </div>
+  <div class="row">
+    <div class="col-xs-12" ng-controller="notificationLandingController as model">
+      <div>
+        <h4>Create Notification</h4>
+        <div class="form-group">
+          <input type="text" class="form-control" ng-model="model.notificationMessage"/>
+        </div>
+        <div class="form-group">
+          <select name="" id="" class="form-control"
+                  ng-model="model.messageType"
+                  ng-options="type for type in model.messageTypes"
+                  >
+          </select>
+        </div>
+        <button class="bit btn-default" ng-click="model.createNotification()">Show Notification</button>
+        <button class="bit btn-default" ng-click="model.createException()">Throw Exceptions</button>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.1/angular.js"></script>
+
+  <script src="js/notification/notification.module.js"></script>
+  <script src="js/notification/notifying.service.js"></script>
+  <script src="js/notification/notification.directive.js"></script>
+  <script src="js/notification/lib/exception-handler.js"></script>
+
+  <script src="js/app.module.js"></script>
+  <script src="js/notification-landing.controller.js"></script>
+
+</body>
+</html>
